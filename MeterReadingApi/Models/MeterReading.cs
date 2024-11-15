@@ -1,9 +1,10 @@
-namespace MeterReadingApi.Models;
-
-public class MeterReading
+namespace MeterReadingApi.Models
 {
-    public int Id { get; set; }
-    public Account Account { get; set; }
-    public DateTime DateTime { get; set; }
-    public int Value { get; set; }
+    public class MeterReading
+    {
+        public int Id { get; set; }
+        public Account Account { get; set; }
+        public DateTime DateTime { get; set; }
+        public int Value { get; set; }
+    }
 }

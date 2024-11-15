@@ -2,19 +2,20 @@ using MeterReadingApi.Models;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 
-namespace MeterReadingApi.Data;
-
-public class AppDbContext : DbContext
+namespace MeterReadingApi.Data
 {
-    public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
+    public class AppDbContext : DbContext
     {
-    }
+        public AppDbContext(DbContextOptions<AppDbContext> options) : base(options)
+        {
+        }
 
-    protected override void OnModelCreating(ModelBuilder modelBuilder)
-    {
-        modelBuilder.UseSerialColumns();
-    }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.UseSerialColumns();
+        }
 
-    public DbSet<Account> Accounts { get; set; }
-    public DbSet<MeterReading> MeterReadings { get; set; }
+        public DbSet<Account> Accounts { get; set; }
+        public DbSet<MeterReading> MeterReadings { get; set; }
+    }
 }

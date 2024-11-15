@@ -1,28 +1,35 @@
 using Microsoft.AspNetCore.Mvc;
-using MeterReadingApi.Models;
+using MeterReadingApi.Data.Interfaces;
 
-namespace MeterReadingApi.Controllers;
-
-[ApiController]
-[Route("[controller]")]
-public class AccountController : ControllerBase
+namespace MeterReadingApi.Controllers
 {
- private readonly ILogger<AccountController> _logger;
-
-    public AccountController(ILogger<AccountController> logger)
+    [ApiController]
+    [Route("[controller]")]
+    public class AccountController : ControllerBase
     {
-        _logger = logger;
-    }
+        private readonly IAccountRepository _accountRepository;
 
-    [HttpGet(Name = "GetAccounts")]
-    public IEnumerable<Account> Get()
-    {
-        return Enumerable.Range(1, 5).Select(index => new Account
+        public AccountController(IAccountRepository accountRepository)
         {
-            Id = Random.Shared.Next(1, 1000),
-            FirstName = "Joe",
-            LastName = "Test"
-        })
-        .ToArray();
+            _accountRepository = accountRepository;
+        }
+
+        [HttpGet("get-all")]
+        public ActionResult GetAll()
+        {
+            try
+            {
+                var accounts = _accountRepository.GetAll();
+
+                return StatusCode(200, accounts);
+            }
+            catch(Exception ex)
+            {
+                return BadRequest(ex);
+            }
+
+        }
     }
+
 }
+

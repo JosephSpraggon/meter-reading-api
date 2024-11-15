@@ -1,5 +1,6 @@
 ﻿using System.Globalization;
 using CsvHelper;
+using MeterReadingApi.Mappings;
 using MeterReadingApi.Models;
 using Microsoft.EntityFrameworkCore.Migrations;
 

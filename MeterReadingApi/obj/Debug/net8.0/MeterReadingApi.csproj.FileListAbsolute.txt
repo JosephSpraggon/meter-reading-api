@@ -109,3 +109,4 @@
 /Users/julietyoussef/Documents/Joe/meter-reading-api/MeterReadingApi/bin/Debug/net8.0/zh-Hans/Microsoft.CodeAnalysis.Workspaces.resources.dll
 /Users/julietyoussef/Documents/Joe/meter-reading-api/MeterReadingApi/bin/Debug/net8.0/zh-Hant/Microsoft.CodeAnalysis.Workspaces.resources.dll
 /Users/julietyoussef/Documents/Joe/meter-reading-api/MeterReadingApi/bin/Debug/net8.0/CsvHelper.dll
+/Users/julietyoussef/Documents/Joe/meter-reading-api/MeterReadingApi/obj/Debug/net8.0/MeterReadingApi.sourcelink.json
