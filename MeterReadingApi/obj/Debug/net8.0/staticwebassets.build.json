@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "Hash": "fRcpZBH6pzCbInV97r08rtJVKQ8IfMuQykfTKww/nvs=",
+  "Source": "MeterReadingApi",
+  "BasePath": "_content/MeterReadingApi",
+  "Mode": "Default",
+  "ManifestType": "Build",
+  "ReferencedProjectsConfiguration": [],
+  "DiscoveryPatterns": [],
+  "Assets": []
+}
