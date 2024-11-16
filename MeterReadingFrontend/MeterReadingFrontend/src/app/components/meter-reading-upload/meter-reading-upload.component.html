@@ -1,0 +1,7 @@
+<div>
+    <h2>Upload Meter Readings</h2>
+    <input type="file" (change)="onFileSelected($event)" />
+    <button (click)="onUpload()">Upload</button>
+    <p *ngIf="responseMessage">{{ responseMessage }}</p>
+  </div>
+  
