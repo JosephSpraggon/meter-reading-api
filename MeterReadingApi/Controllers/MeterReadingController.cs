@@ -21,10 +21,25 @@ namespace MeterReadingApi.Controllers
 
             if(!serviceResult.IsValid)
             {
-                return BadRequest(serviceResult.ErrorMessage);
+                return BadRequest(new 
+                {
+                    CriticalError = serviceResult.CriticalErrorMessage
+                });
             }
 
-            return Ok("File processed successfully.");
+            var message = "Meter reading file was uploaded successfully";
+            if (serviceResult.ErrorMessages.Count > 0)
+            {
+                message += " with errors";            
+            }
+
+            return Ok(new
+            {
+                Message = message,
+                SuccessfulReadings = serviceResult.SuccessfulResult,
+                FailedReadings = serviceResult.FailedResult,
+                FailedReadingsErrors = serviceResult.ErrorMessages
+            });
         }
     }
 

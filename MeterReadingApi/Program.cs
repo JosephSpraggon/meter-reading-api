@@ -18,7 +18,11 @@ builder.Services.AddDbContext<AppDbContext>(
     o => o.UseNpgsql(builder.Configuration.GetConnectionString("Database"))
 );
 
+// Repositories
 builder.Services.AddScoped<IAccountRepository, AccountRepository>();
+builder.Services.AddScoped<IMeterReadingsRepository, MeterReadingsRepository>();
+
+// Services
 builder.Services.AddScoped<IMeterReadingService, MeterReadingService>();
 
 var app = builder.Build();

@@ -1,20 +1,33 @@
-using System.ComponentModel.DataAnnotations;
-
 namespace MeterReadingApi.Services
 {
     public class ServiceResult
     {
-       public string ErrorMessage { get; private set; }
-       public bool IsValid 
-       {
+        public List<string> ErrorMessages { get; private set; } = new List<string>();
+        public string CriticalErrorMessage { get; private set; }
+        public int SuccessfulResult { get; set; }
+        public int FailedResult { get; set; } 
+
+        public bool IsValid 
+        {
             get
             {
-                return string.IsNullOrEmpty(ErrorMessage);
+                return string.IsNullOrEmpty(CriticalErrorMessage);
             }
-       }
-       public void AddErrorMessage(string errorMessage)
-       {
-            ErrorMessage = errorMessage;
-       }
+        }
+
+        public void AddErrorMessage(string errorMessage)
+        {
+            ErrorMessages.Add(errorMessage);
+            FailedResult++;
+        }
+
+        public void AddCriticalError(string errorMessage)
+        {
+            CriticalErrorMessage = errorMessage;
+        }
+
+        public void AddSuccessfulResult(){
+            SuccessfulResult++;
+        }
     }
 }

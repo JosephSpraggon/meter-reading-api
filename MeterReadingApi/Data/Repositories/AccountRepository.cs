@@ -16,5 +16,10 @@ namespace MeterReadingApi.Data.Repositories
         {
            return _context.Accounts.ToList();
         }
+
+        public async Task<Account?> GetByIdAsync(int accountId)
+        {
+            return await _context.Accounts.FindAsync(accountId);
+        }
     }
 }
