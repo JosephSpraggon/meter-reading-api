@@ -1,1 +1,127 @@
-/* You can add global styles to this file, and also import other style files */
+body {
+    font-family: "Poppins", sans-serif;
+    background-color: #ffffff;
+    color:#182d4e;
+    margin: 0;
+    padding: 0;
+}
+
+.centered-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 100vh;
+    background-color: #f8f9fa;
+    margin: 0;
+}
+
+.app-content {
+    width: 100%;
+    max-width: 600px;
+    padding: 20px;
+    background-color: #f7f5f5;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.logo{
+    display: block;
+    margin: 0 auto 10px;
+    max-width: 100px; /* Adjust size */
+    height: auto;
+}
+
+.title {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+.card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.card-title {
+    color: #6b7995;
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin-bottom: 15px;
+}
+
+.file-input {
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+.upload-button {
+    background-color: #eb6533;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 9999px;
+    font-size: 1.1rem;
+    width: 100%;
+    cursor: pointer;
+}
+
+.upload-button:hover {
+    background-color: #e63023;
+}
+
+.response-container {
+    margin-top: 20px;
+}
+
+
+.error-container {
+    background-color: #f8d7da;
+    color: #721c24;
+    border: 1px solid #f5c6cb;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+
+.error-message {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin: 0;
+}
+
+.response-card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.response-message {
+    font-size: 1.25rem;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.error-list-container {
+    margin-top: 20px;
+}
+
+.error-list-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.error-list {
+    list-style-type: circle;
+    padding-left: 20px;
+    font-size: 0.95rem;
+    color: #dc3545;
+}
+
+.error-item {
+    margin-bottom: 5px;
+}

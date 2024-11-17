@@ -1,11 +1,21 @@
-<div>
-    <h2>Upload Meter Readings</h2>
-    <input type="file" (change)="onFileSelected($event)" />
-    <button (click)="onUpload()">Upload</button>
-  
-    <app-response-display 
-      [response]="response" 
-      [errorMessage]="errorMessage">
-    </app-response-display>
-  </div>
-  
+<div class="centered-container">
+    <div class="app-content">
+        <img src="assets/images/ENSEK-logo.png" alt="Logo" class="logo" />
+        <div>
+            <h1 class="title">Meter Reading Upload</h1>
+        </div>
+    
+        <div class="card">
+            <h2 class="card-title">Upload your meter readings CSV file</h2>
+            <input type="file" class="file-input" (change)="onFileSelected($event)" />
+            <button class="upload-button" (click)="onUpload()">Upload</button>
+        </div>
+
+        <div class="response-container">
+            <app-response-display 
+            [response]="response" 
+            [errorMessage]="errorMessage">
+            </app-response-display>
+        </div>
+    </div>
+</div>
