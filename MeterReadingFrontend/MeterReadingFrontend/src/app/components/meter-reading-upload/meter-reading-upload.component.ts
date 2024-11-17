@@ -24,7 +24,7 @@ export class MeterReadingUploadComponent {
 
   onUpload(): void {
     if (!this.selectedFile) {
-      this.errorMessage = 'Please select a file before uploading.';
+      this.errorMessage = 'Please select a file before uploading';
       return;
     }
 
