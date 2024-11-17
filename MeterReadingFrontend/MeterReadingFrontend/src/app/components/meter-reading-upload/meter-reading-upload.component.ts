@@ -8,13 +8,18 @@ import { MeterReadingService } from '../../services/meter-reading.service'
 })
 export class MeterReadingUploadComponent {
   selectedFile: File | null = null;
+  fileName: string | null = null;
   response: any;
-  errorMessage: string | null = null; // To handle any errors
+  errorMessage: string | null = null; 
 
   constructor(private meterReadingService: MeterReadingService) {}
 
-  onFileSelected(event: any): void {
-    this.selectedFile = event.target.files[0];
+  onFileSelected(file: File | null): void {
+    if (file) {
+      this.selectedFile = file;
+    } else {
+      this.selectedFile = null;
+    }
   }
 
   onUpload(): void {

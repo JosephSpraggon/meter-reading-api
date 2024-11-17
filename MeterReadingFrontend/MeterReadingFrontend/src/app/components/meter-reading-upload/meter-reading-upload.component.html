@@ -7,8 +7,10 @@
     
         <div class="card">
             <h2 class="card-title">Upload your meter readings CSV file</h2>
-            <input type="file" class="file-input" (change)="onFileSelected($event)" />
-            <button class="upload-button" (click)="onUpload()">Upload</button>
+
+            <app-file-upload (fileSelected)="onFileSelected($event)"></app-file-upload>
+            
+            <button class="upload-btn" (click)="onUpload()">Upload</button>
         </div>
 
         <div class="response-container">
