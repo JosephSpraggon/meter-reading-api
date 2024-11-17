@@ -7,9 +7,10 @@ import { MeterReadingUploadComponent } from './components/meter-reading-upload/m
 import { MeterReadingService } from './services/meter-reading.service';
 import { RouterModule } from '@angular/router';
 import { AppRoutingModule } from './app-routing.module';
+import { ResponseDisplayComponent } from './components/response-display/response-display.component';
 
 @NgModule({
-  declarations: [AppComponent, MeterReadingUploadComponent],
+  declarations: [AppComponent, MeterReadingUploadComponent, ResponseDisplayComponent],
   imports: [BrowserModule, HttpClientModule, FormsModule, RouterModule, AppRoutingModule],
   providers: [MeterReadingService],
   bootstrap: [AppComponent],

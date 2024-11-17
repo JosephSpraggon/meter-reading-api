@@ -2,20 +2,10 @@
     <h2>Upload Meter Readings</h2>
     <input type="file" (change)="onFileSelected($event)" />
     <button (click)="onUpload()">Upload</button>
-    
-    <div *ngIf="errorMessage"> <h2>{{ errorMessage }}</h2></div>
-
-    <div *ngIf="response">
-        <h2>{{ response.message }}</h2>
-        <p><strong>Successful Readings:</strong> {{ response.successfulReadings }}</p>
-        <p><strong>Failed Readings:</strong> {{ response.failedReadings }}</p>
-        
-        <div *ngIf="response.failedReadingsErrors?.length > 0">
-            <h3>Errors:</h3>
-            <ul>
-            <li *ngFor="let error of response.failedReadingsErrors">{{ error }}</li>
-            </ul>
-        </div>
-    </div>
-</div>
+  
+    <app-response-display 
+      [response]="response" 
+      [errorMessage]="errorMessage">
+    </app-response-display>
+  </div>
   
