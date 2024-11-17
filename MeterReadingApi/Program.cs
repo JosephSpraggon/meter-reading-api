@@ -25,6 +25,16 @@ builder.Services.AddScoped<IMeterReadingsRepository, MeterReadingsRepository>();
 // Services
 builder.Services.AddScoped<IMeterReadingService, MeterReadingService>();
 
+builder.Services.AddCors(options =>
+{
+    options.AddDefaultPolicy(policy =>
+    {
+        policy.WithOrigins("http://localhost:4200") // Allow Angular app
+              .AllowAnyHeader()
+              .AllowAnyMethod();
+    });
+});
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -39,5 +49,7 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
+
+app.UseCors();
 
 app.Run();

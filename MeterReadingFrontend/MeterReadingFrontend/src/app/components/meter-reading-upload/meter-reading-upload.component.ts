@@ -8,7 +8,8 @@ import { MeterReadingService } from '../../services/meter-reading.service'
 })
 export class MeterReadingUploadComponent {
   selectedFile: File | null = null;
-  responseMessage: string | null = null;
+  response: any;
+  errorMessage: string | null = null; // To handle any errors
 
   constructor(private meterReadingService: MeterReadingService) {}
 
@@ -18,17 +19,19 @@ export class MeterReadingUploadComponent {
 
   onUpload(): void {
     if (!this.selectedFile) {
-      this.responseMessage = 'Please select a file before uploading.';
+      this.errorMessage = 'Please select a file before uploading.';
       return;
     }
 
     this.meterReadingService.uploadMeterReadings(this.selectedFile).subscribe({
       next: (response) => {
-        this.responseMessage = response.Message;
-        console.log(response); // Handle additional response data
+        this.errorMessage = null;
+        this.response = response;
+        console.log(response);
       },
       error: (err) => {
-        this.responseMessage = 'An error occurred during upload.';
+        this.response = null;
+        this.errorMessage = err.error.criticalError;
         console.error(err);
       },
     });
